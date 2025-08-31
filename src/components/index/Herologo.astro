@@ -1,0 +1,54 @@
+---
+import Ubicacion from '../react/location.tsx';
+---
+
+<section class="h-screen flex flex-col gap-9" >
+    <div class="max-w-3xl px-10 mx-auto pt-36 pb-10" >
+        <div class="flex flex-col">
+          <div class="pb-10">
+            <h1 class="text-6xl font-extrabold text-green-600">AmbiTrack</h1>
+          </div>
+          <div class="flex flex-col pb-10 gap-2">
+            <p class="font-extrabold text-[0.8rem]">
+              Fecha: <span class="font-normal">{new Date().toLocaleDateString()}</span>
+            </p>
+            <p class="font-extrabold text-[0.8rem]">
+              Hora: <span class="font-normal">{new Date().toLocaleTimeString()}</span>
+            </p>
+            <p class="font-extrabold text-[0.8rem]">
+              Ciudad: 
+              <Ubicacion client:load />
+            </p>
+          </div>
+          <div>
+            <a href="/login" class="bg-red-500 text-white px-4 py-2 rounded" >
+              Iniciar sesión
+            </a>
+          </div>
+        </div>
+    </div>
+    <div class="flex-1 flex w-full pb-5 items-end justify-center" >
+        <div id="grid-reports" class="grid gap-4 " >
+            <a href="">
+                <div class="w-full h-full overflow-hidden rounded-lg bg-primary-light" >
+                  <div class="w-[100px] h-[100px] bg-red-500 hover:scale-200 " ></div>
+                </div>
+            </a>
+
+            <a href="">
+                <div class="w-full h-full overflow-hidden rounded-lg bg-primary-light" ></div>
+            </a>
+
+            <a href="">
+                <div class="w-full h-full overflow-hidden rounded-lg bg-primary-light" ></div>
+            </a>
+
+        </div>
+    </div>
+</section>
+<style>
+    #grid-reports {
+        grid-template-columns: repeat(3, 150px);
+        grid-auto-rows: 150px;
+    }
+</style>

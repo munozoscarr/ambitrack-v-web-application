@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary-dark: #0a0a0a;
+    --color-secondary-dark: #ffffff;
+
+    --color-primary-light: #ffffff;
+    --color-secondary-light: #000000;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overscroll-behavior: none;
+  overscroll-behavior-y: none;
+}
+
+body {
+    background-color: var(--color-primary-light);
+    color: var(--color-secondary-light);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--color-primary-dark);
+        color: var(--color-secondary-dark);
+    }
+}
